@@ -351,64 +351,93 @@ const projectData = {
 };
 
 function initProjectsAndModal() {
-  // Filter tabs
+  // Filter tabs & Project cards
   const filterTabs = document.querySelectorAll('.filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
 
-  // Toggle View All Projects & Load More Button
+  // Load More & View All Toggle Controls
   const toggleAllBtn = document.getElementById('toggle-all-projects');
   const viewAllText = document.getElementById('view-all-text');
   const loadMoreBtn = document.getElementById('load-more-btn');
   const loadMoreWrap = document.getElementById('load-more-wrap');
+
   let isAllExpanded = false;
   let currentFilter = 'all';
 
-  function setExpandedState(expanded) {
-    isAllExpanded = expanded;
-    const extraProjects = document.querySelectorAll('.extra-project');
-
-    extraProjects.forEach((card) => {
+  function renderProjects() {
+    // 1. Gather all project cards matching current category filter
+    const matchingCards = [];
+    projectCards.forEach((card) => {
       const cat = card.getAttribute('data-category');
       if (currentFilter === 'all' || cat === currentFilter) {
-        if (isAllExpanded) {
-          card.style.display = 'flex';
-          setTimeout(() => (card.style.opacity = '1'), 50);
-        } else {
-          card.style.opacity = '0';
-          setTimeout(() => (card.style.display = 'none'), 200);
-        }
+        matchingCards.push(card);
+      } else {
+        card.style.opacity = '0';
+        card.style.display = 'none';
       }
     });
 
-    if (viewAllText) {
-      viewAllText.textContent = isAllExpanded ? 'Show Top 3 Only' : 'View All Projects';
-    }
+    const totalMatching = matchingCards.length;
+    const hasMore = totalMatching > 3;
+    const extraCount = totalMatching - 3;
 
-    if (loadMoreBtn) {
-      const btnText = loadMoreBtn.querySelector('.btn-text');
-      if (isAllExpanded) {
-        loadMoreBtn.classList.add('expanded');
-        if (btnText) btnText.textContent = 'Show Top 3 Only';
+    // 2. Control visibility (top 3 by default or all if expanded)
+    matchingCards.forEach((card, index) => {
+      if (index < 3 || isAllExpanded) {
+        card.style.display = 'flex';
+        setTimeout(() => (card.style.opacity = '1'), 30);
       } else {
-        loadMoreBtn.classList.remove('expanded');
-        if (btnText) btnText.textContent = `See More Works (${extraProjects.length})`;
+        card.style.opacity = '0';
+        setTimeout(() => (card.style.display = 'none'), 150);
       }
+    });
+
+    // 3. Show or hide Load More button based on whether there are > 3 projects in this category
+    if (hasMore) {
+      if (loadMoreWrap) loadMoreWrap.style.display = 'flex';
+      if (toggleAllBtn) toggleAllBtn.style.display = 'inline-flex';
+
+      if (viewAllText) {
+        viewAllText.textContent = isAllExpanded ? 'Show Top 3 Only' : `View All (${totalMatching})`;
+      }
+
+      if (loadMoreBtn) {
+        const btnText = loadMoreBtn.querySelector('.btn-text');
+        if (isAllExpanded) {
+          loadMoreBtn.classList.add('expanded');
+          if (btnText) btnText.textContent = 'Show Top 3 Only';
+        } else {
+          loadMoreBtn.classList.remove('expanded');
+          if (btnText) btnText.textContent = `See More Works (${extraCount})`;
+        }
+      }
+    } else {
+      // 3 or fewer projects: hide the "See More" button and header toggle link
+      if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+      if (toggleAllBtn) toggleAllBtn.style.display = 'none';
     }
+  }
+
+  // Initial Render on page load
+  renderProjects();
+
+  function toggleExpand() {
+    playSound('click');
+    isAllExpanded = !isAllExpanded;
+    renderProjects();
   }
 
   if (toggleAllBtn) {
     toggleAllBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      playSound('click');
-      setExpandedState(!isAllExpanded);
+      toggleExpand();
     });
   }
 
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      playSound('click');
-      setExpandedState(!isAllExpanded);
+      toggleExpand();
     });
   }
 
@@ -418,31 +447,9 @@ function initProjectsAndModal() {
       filterTabs.forEach((t) => t.classList.remove('active'));
       tab.classList.add('active');
 
-      const filter = tab.getAttribute('data-filter');
-      currentFilter = filter;
-
-      projectCards.forEach((card) => {
-        const cat = card.getAttribute('data-category');
-        const isExtra = card.classList.contains('extra-project');
-
-        if (filter === 'all') {
-          if (loadMoreWrap) loadMoreWrap.style.display = 'flex';
-          if (!isExtra || isAllExpanded) {
-            card.style.display = 'flex';
-            setTimeout(() => (card.style.opacity = '1'), 50);
-          } else {
-            card.style.opacity = '0';
-            setTimeout(() => (card.style.display = 'none'), 200);
-          }
-        } else if (cat === filter) {
-          if (loadMoreWrap) loadMoreWrap.style.display = 'none';
-          card.style.display = 'flex';
-          setTimeout(() => (card.style.opacity = '1'), 50);
-        } else {
-          card.style.opacity = '0';
-          setTimeout(() => (card.style.display = 'none'), 200);
-        }
-      });
+      currentFilter = tab.getAttribute('data-filter') || 'all';
+      isAllExpanded = false; // Reset to top 3 view on tab change
+      renderProjects();
     });
   });
 
