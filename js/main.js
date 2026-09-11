@@ -491,6 +491,78 @@ const projectData = {
       'Optimized for heavy cotton oversized streetwear fit with high-contrast plastisol ink printing.'
     ],
     liveDemoUrl: '#'
+  },
+  'social-wendys-tumbler': {
+    number: '14',
+    title: "WENDY'S: 100TH STORE PROMO",
+    category: 'Social Media / Brand Promo Campaign',
+    client: "Wendy's Philippines (Friendship Highway)",
+    year: '2024 — 2026',
+    role: 'Social Media Graphic Artist',
+    deliverables: 'Promotional Ad Banner, Social Feed Creatives, Product Mockup Render',
+    image: 'assets/images/social_wendys_tumbler.jpg',
+    description:
+      "High-converting promotional social feed graphic for Wendy's 100th store milestone in Friendship Highway, Pampanga. Highlights the limited edition Wendy's baby-blue insulated tumbler on a clean display plinth with bold typography and corporate brand styling.",
+    highlights: [
+      'High-impact promotional headline typography designed for scroll-stopping engagement.',
+      'Realistic 3D tumbler product rendering with clean pedestal shadow integration.',
+      "Strict adherence to Wendy's international brand palette, logos, and promotional layout guidelines."
+    ],
+    liveDemoUrl: '#'
+  },
+  'social-imprenta-bigsale': {
+    number: '15',
+    title: 'IMPRENTA: MID-YEAR BIG SALE',
+    category: 'Social Media / Retail Marketing Campaign',
+    client: 'Imprenta Novaliches Printing Services',
+    year: '2024 — 2026',
+    role: 'Lead Marketing & Creative Designer',
+    deliverables: 'Multi-Product Collage, Coupon Creative, Social Promo Announcement',
+    image: 'assets/images/social_imprenta_bigsale.jpg',
+    description:
+      'An energetic, high-density marketing creative showcasing custom jerseys, tees, and riding apparel with a prominent 10% OFF discount coupon and textured team backdrop to drive customer inquiries and orders.',
+    highlights: [
+      'Layered multi-product showcase featuring custom jerseys, polo shirts, and riding long sleeves.',
+      'Prominent tear-off ticket coupon motif highlighting special bundle offers and freebies.',
+      'Bold typography contrast with textured crowd photo composite driving high campaign conversions.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'social-imprenta-samurai': {
+    number: '16',
+    title: 'IMPRENTA: SAMURAI RIDING SLEEVES',
+    category: 'Social Media / Apparel Product Launch',
+    client: 'Imprenta Novaliches Printing Services',
+    year: '2024 — 2026',
+    role: 'Visual Designer & Apparel Stylist',
+    deliverables: 'Product Launch Poster, Torn Paper Editorial Layout, Social Showcase',
+    image: 'assets/images/social_imprenta_samurai.jpg',
+    description:
+      'Fierce product launch ad for Imprenta Novaliches featuring the "Dominance Since 2022" Japanese Samurai warrior riding long sleeves. Employs a stylized torn paper transition over an ornate Japanese cloud pattern.',
+    highlights: [
+      'Dynamic split torn-paper graphic composition separating textured crimson background from product view.',
+      '3D realistic floating garment mockup with front-and-back artwork visibility.',
+      'Custom typography and Japanese flame & gold cloud ornament integration.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'social-wendys-totebag': {
+    number: '17',
+    title: "WENDY'S: 2ND ANNIVERSARY TOTE BAG",
+    category: 'Social Media / Anniversary Event Promo',
+    client: "Wendy's Philippines (Tarlac Branch)",
+    year: '2024 — 2026',
+    role: 'Promotional Graphic Artist',
+    deliverables: 'Anniversary Campaign Ad, Merchandise Showcase, Social Poster',
+    image: 'assets/images/social_wendys_totebag.jpg',
+    description:
+      "Celebratory social media campaign poster commemorating the 2nd Anniversary of Wendy's Tarlac branch. Showcases the limited-edition canvas tote bag with custom cute burger, frosty, and Wendy mascots.",
+    highlights: [
+      'Dynamic radiant sunburst backdrop emphasizing the commemorative occasion.',
+      'Crisp product photography placement on a wooden cake plinth for a festive atmosphere.',
+      'Vibrant brand typography and clear promotional mechanics tailored for social engagement.'
+    ],
+    liveDemoUrl: '#'
   }
 };
 
