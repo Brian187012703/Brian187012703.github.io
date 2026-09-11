@@ -571,16 +571,27 @@ function initContactSystem() {
           contactForm.reset();
           setTimeout(closeContactModal, 1800);
         } else if (result.message && result.message.toLowerCase().includes('activation')) {
+          // If activation is pending, ensure inquiry is immediately dispatched via email client
           playSound('chime');
-          showToast('✦ Form initialized! Check Briantanael187@gmail.com to click "Activate Form" once.');
+          showToast('✦ Form initialized! Opening your email app to deliver inquiry directly...');
+          const subject = encodeURIComponent(`Commission Inquiry: ${payload.artwork_service || 'New Project'} — ${payload.name || ''}`);
+          const body = encodeURIComponent(
+            `Hi Brian Joshua,\n\n` +
+            `I would like to commission an artwork / project.\n\n` +
+            `• Name: ${payload.name || ''}\n` +
+            `• Email: ${payload.email || ''}\n` +
+            `• Artwork Service: ${payload.artwork_service || ''}\n` +
+            `• Project Scope: ${payload.project_budget || ''}\n\n` +
+            `Creative Brief & Vision:\n${payload.message || ''}\n`
+          );
+          window.location.href = `mailto:Briantanael187@gmail.com?subject=${subject}&body=${body}`;
           contactForm.reset();
-          setTimeout(closeContactModal, 2800);
+          setTimeout(closeContactModal, 2500);
         } else {
           throw new Error(result.message || 'Submission failed');
         }
       } catch (err) {
         console.warn('FormSubmit AJAX issue, falling back:', err);
-        // Fallback: If network issue, open mailto client pre-populated so message is never lost
         playSound('click');
         showToast('✦ Notice: Opening your default email app to send directly...');
         const subject = encodeURIComponent(`Commission Inquiry: ${payload.artwork_service || 'New Project'} — ${payload.name || ''}`);
@@ -604,6 +615,22 @@ function initContactSystem() {
         }
       }
     });
+
+    // Dynamic direct email link updater
+    const directEmailLink = document.getElementById('direct-email-link');
+    if (directEmailLink) {
+      const updateDirectMail = () => {
+        const name = document.getElementById('contact-name')?.value || '';
+        const service = document.getElementById('contact-service')?.value || 'Creative Project';
+        const budget = document.getElementById('contact-budget')?.value || '';
+        const message = document.getElementById('contact-message')?.value || '';
+        const subj = encodeURIComponent(`Commission Inquiry: ${service} — ${name}`);
+        const bdy = encodeURIComponent(`Name: ${name}\nService: ${service}\nScope: ${budget}\n\nCreative Brief:\n${message}`);
+        directEmailLink.href = `mailto:Briantanael187@gmail.com?subject=${subj}&body=${bdy}`;
+      };
+      contactForm.addEventListener('input', updateDirectMail);
+      contactForm.addEventListener('change', updateDirectMail);
+    }
   }
 }
 
