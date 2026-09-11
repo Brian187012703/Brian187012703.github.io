@@ -1,0 +1,11 @@
+# Screenshots generated during dev
+*.png
+!assets/**/*.png
+*.jpg
+!assets/**/*.jpg
+
+# Temporary directories
+.chrome-temp/
+.vscode/
+.idea/
+Thumbs.db
