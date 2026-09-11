@@ -347,6 +347,96 @@ const projectData = {
       'Vivid color treatment bringing out lush meadow greens, sunny skies, and playful yellow accents.'
     ],
     liveDemoUrl: '#'
+  },
+  'trad-lily-portrait': {
+    number: '06',
+    title: 'LILY IN BLOOM',
+    category: 'Traditional Art / Graphite & Pencil Portrait',
+    client: 'Original Sketchbook & Portfolio Study',
+    year: '2023 — 2026',
+    role: 'Traditional Fine Artist',
+    deliverables: 'Graphite on Textured Paper, Botanical Illustration, Character Study',
+    image: 'assets/images/traditional_lily_portrait.jpg',
+    description:
+      'An evocative graphite portrait executed on cold-press textured drawing paper depicting an elegant stylized muse adorned with delicate blooming lilies in her hair and cascading across the foreground. Signed "TANAEL" by the artist.',
+    highlights: [
+      'Rendered with varying graphite pencil grades (2B to 8B) for rich velvet black tones and soft skin highlights.',
+      'Detailed botanical study of lily petal veins and organic folds.',
+      'Mastery of expressive facial anatomy, delicate eyelash work, and fine hair strand details.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'trad-female-study': {
+    number: '07',
+    title: 'REALISM PORTRAIT STUDY',
+    category: 'Traditional Art / Charcoal & Graphite Drawing',
+    client: 'Anatomy & Form Master Study',
+    year: '2023 — 2026',
+    role: 'Traditional Fine Artist',
+    deliverables: 'Charcoal Shading Study, Blending & Smudge Technique, Kasimir Pencil Art',
+    image: 'assets/images/traditional_female_study.jpg',
+    description:
+      'A masterclass in soft tonal gradients and charcoal blending, capturing the delicate planes of the human face, collarbone, and gaze. Crafted with professional Kasimir graphite and charcoal pencils.',
+    highlights: [
+      'Subtle charcoal blending using blending stumps and soft tissue to achieve smooth skin transitions.',
+      'High-precision eye and lip rendering with lifelike specular light reflection.',
+      'Demonstrates deep traditional understanding of three-dimensional form and diffuse lighting.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'trad-jordan-sneaker': {
+    number: '08',
+    title: 'AIR JORDAN 1 HIGH RETRO',
+    category: 'Traditional Art / Sneaker & Product Illustration',
+    client: 'Streetwear & Sneaker Culture Study',
+    year: '2023 — 2026',
+    role: 'Traditional Fine Artist',
+    deliverables: 'Charcoal Sneaker Illustration, Leather Texture Study, Tone Precision Art',
+    image: 'assets/images/traditional_jordan_sneaker.jpg',
+    description:
+      'An impeccably rendered charcoal and graphite study of the legendary Air Jordan 1 High retro silhouette. Accurately details leather panel grain, stitch perforations on the toe box, lace tension, and rubber midsole contours.',
+    highlights: [
+      'Deep matte black charcoal application contrasting against crisp white negative paper space.',
+      'Intricate leather texture replication and micro-stitch detailing along sneaker panels.',
+      'Created with Faber-Castell Pitt Charcoal pencils and fine detail blending tools.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'trad-masked-portrait': {
+    number: '09',
+    title: 'SILHOUETTE & SHADOW',
+    category: 'Traditional Art / Charcoal Stippling & Shading',
+    client: 'Urban Aesthetic Study',
+    year: '2023 — 2026',
+    role: 'Traditional Fine Artist',
+    deliverables: 'Textured Paper Charcoal Art, Urban Streetwear Portrait, High-Contrast Study',
+    image: 'assets/images/traditional_masked_portrait.jpg',
+    description:
+      'A contemporary urban portrait rendered with intense charcoal blacks on heavy textured paper. Showcases a youth in spectacles and mask under dramatic overhead lighting casting deep shadows.',
+    highlights: [
+      'Heavy black charcoal pigmentation creating bold contrast with crisp paper tooth texture.',
+      'Dramatic top-down directional lighting study defining hair volume and glasses reflection.',
+      'Exploration of modern urban youth identity through traditional fine art media.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'trad-blindfold-figure': {
+    number: '10',
+    title: 'BOUND PERCEPTION',
+    category: 'Traditional Art / Conceptual Graphite Study',
+    client: 'Conceptual Fine Art Series',
+    year: '2023 — 2026',
+    role: 'Traditional Fine Artist',
+    deliverables: 'Pencil on Paper, Fabric Drape & Fold Study, Conceptual Portraiture',
+    image: 'assets/images/traditional_blindfold_figure.jpg',
+    description:
+      'A poignant conceptual artwork of a blindfolded figure in an unbuttoned overcoat and chain necklace. Focuses heavily on the physics of cloth draping, lapel folds, and soft skin rendering around the jaw and neck.',
+    highlights: [
+      'Extensive study of fabric folds, shadows, and textile weight across the coat lapel.',
+      'Delicate shading using soft graphite grades and precision blending brushes.',
+      'Symbolic narrative exploring introspection, vulnerability, and modern stoicism.'
+    ],
+    liveDemoUrl: '#'
   }
 };
 
