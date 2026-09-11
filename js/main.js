@@ -258,75 +258,93 @@ function initTiltEffects() {
    5. PROJECT FILTERING & CASE STUDY MODAL
    ========================================================================== */
 const projectData = {
-  social: {
+  'nba-next': {
     number: '01',
-    title: 'SOCIAL MEDIA POSTS',
-    category: 'Branding & Creative Content',
-    client: 'Brands & Digital Creators',
-    year: '2023 — 2026',
-    role: 'Graphic Artist & Content Stylist',
-    deliverables: 'Social Media Banners, Story Creatives, Promo Ads, Visual Guides',
-    image: 'assets/images/project_veloce.jpg',
+    title: "WHO'S GONNA BE NEXT?",
+    category: 'Digital Art / Sports Poster',
+    client: 'Concept Sports Poster Showcase',
+    year: '2024 — 2026',
+    role: 'Digital Concept Artist & Retoucher',
+    deliverables: 'Cinematic Sports Poster, High-Res Composite, Social Promo Artwork',
+    image: 'assets/images/digital_nba_next.jpg',
     description:
-      'A collection of high-converting, attention-grabbing social media graphics crafted for viral reach and modern brand aesthetics. Built with high-contrast typography, color grading, and dynamic visual layouts across Instagram, Facebook, and promotional campaigns.',
+      'A powerful, cinematic sports concept poster spotlighting top basketball prodigies Kon Knueppel and Cooper Flagg standing atop mountain peaks looking towards the glowing Kia NBA Rookie of the Year trophy at sunrise. Crafted with atmospheric lighting, golden cloud depth, and bold editorial typography.',
     highlights: [
-      'Engineered bold visual hierarchy tailored for scroll-stopping engagement on modern feeds.',
-      'Utilized Photoshop, CorelDRAW, and Canva for versatile, fast-turnaround campaign packages.',
-      'Created unified visual identity systems for multi-platform marketing launches.'
+      'Designed realistic sunset lighting angles matching player cutout highlights.',
+      'Created custom glass refraction and glowing radiance for the NBA Rookie trophy centerpiece.',
+      'Authored with high-contrast typography and dynamic sports poster composition.'
     ],
     liveDemoUrl: '#'
   },
-  apparel: {
+  'alex-eala': {
     number: '02',
-    title: 'CUSTOM APPAREL',
-    category: 'Clothing & Streetwear Merch',
-    client: 'Apparel Brands & Independent Merch',
-    year: '2022 — 2026',
-    role: 'Apparel Graphic Artist',
-    deliverables: 'Vector T-Shirt Graphics, Streetwear Typography, Silk Screen Separations',
-    image: 'assets/images/project_woodcraft.jpg',
+    title: 'ALEX EALA: THE FACE OF THE PHILIPPINES',
+    category: 'Digital Art / Cultural Sports Tribute',
+    client: 'Filipino Pride Artwork Series',
+    year: '2024 — 2026',
+    role: 'Digital Artist & Creative Retoucher',
+    deliverables: 'Editorial Portrait Poster, Cultural Art Tribute, High-Detail Matte Painting',
+    image: 'assets/images/digital_alex_eala.jpg',
     description:
-      'Custom graphic designs engineered specifically for apparel production, streetwear brands, and event merchandise. Focused on intricate line art, typography composition, and color-separated vector files ready for screen printing and direct-to-garment (DTG) execution.',
+      'A majestic tribute celebrating tennis sensation Alex Eala as an ambassador of Philippine pride. Blends traditional Filipino heritage with elite sports athleticism, depicting Alex holding the Philippine national flag in an elegant Filipiniana gown across an endless golden wheat field at twilight.',
     highlights: [
-      'Mastery in vector separation, print specifications, and garment mockups.',
-      'Delivered over 100+ unique shirt and hoodie designs for streetwear brands and client collections.',
-      'Blends hand-drawn traditional character art with futuristic cyber-grunge typography.'
+      'Complex blending of fabric texture, golden hour ambiance, and realistic wind physics on the Philippine flag.',
+      'Seamless digital composite of traditional Filipiniana dress and modern tennis racket equipment.',
+      'Evocative atmospheric depth with soft cloud horizons and soaring birds.'
     ],
     liveDemoUrl: '#'
   },
-  digital: {
+  'post-malone': {
     number: '03',
-    title: 'DIGITAL ARTS',
-    category: 'Concept Art & Digital Illustration',
-    client: 'Commissions & Creative Studios',
-    year: '2021 — 2026',
-    role: 'Digital Illustrator & Concept Artist',
-    deliverables: 'High-Res Digital Paintings, Character Designs, Concept Artworks',
-    image: 'assets/images/project_urbanic.jpg',
+    title: 'POST MALONE: AUSTIN POST TRIBUTE',
+    category: 'Digital Art / Pop Culture Montage',
+    client: 'Music & Concert Series Artwork',
+    year: '2024 — 2026',
+    role: 'Graphic Stylist & Photo Manipulator',
+    deliverables: 'Fiery Tour Poster, Monochromatic Screen Print Art, High-Impact Album Creative',
+    image: 'assets/images/digital_post_malone.jpg',
     description:
-      'Expansive digital art creations combining painterly brushwork with contemporary sci-fi and illustrative character art. Each piece balances dramatic rim lighting, anatomy precision, and atmospheric world-building.',
+      'An explosive, fiery monochromatic concert montage celebrating global music icon Post Malone. Features layered high-energy live performance captures, detailed facial expressions, body tattoos, blazing flame textures, and custom signature typography.',
     highlights: [
-      'Created utilizing Adobe Photoshop, graphic tablets, and AI-assisted workflows.',
-      'Rich cinematic color palettes with high-depth contrast and rendering.',
-      'Versatile styles ranging from anime/manga to hyper-stylized digital realism.'
+      'Multi-layered composite with seamless transition between live performance poses.',
+      'Intense fiery color grade with burning embers, dust grains, and radiant fire highlights.',
+      'Precision masking of facial features, beard details, and intricate body ink.'
     ],
     liveDemoUrl: '#'
   },
-  traditional: {
+  'lewis-hamilton': {
     number: '04',
-    title: 'TRADITIONAL ARTS',
-    category: 'Drawing & Painting Studies',
-    client: 'Private Art Collectors & Exhibitions',
-    year: '2019 — 2026',
-    role: 'Traditional Fine Artist',
-    deliverables: 'Graphite Drawings, Ink Sketches, Canvas Paintings, Mixed Media',
-    image: 'assets/images/project_neural.jpg',
+    title: 'LEWIS HAMILTON: FORMULA 1 CHAMPION',
+    category: 'Digital Art / Motorsport Artwork',
+    client: 'F1 Tribute & Racing Graphics',
+    year: '2024 — 2026',
+    role: 'Motorsport Graphic Designer',
+    deliverables: 'F1 Grand Prix Poster, Race Winner Commemorative Art, High-Detail Car Composite',
+    image: 'assets/images/digital_lewis_hamilton.jpg',
     description:
-      'Foundational traditional artworks rooted in classic drawing techniques, portraiture, ink hatching, and vibrant painting mediums. Demonstrates deep understanding of anatomy, lighting, values, and organic textures that elevate digital work.',
+      'A gritty, high-contrast tribute celebrating 7-time Formula 1 World Champion Sir Lewis Hamilton. Combines neon purple chromatic helmet reflections, emotional championship victory moments, British flag elements, and the iconic Mercedes-AMG Petronas F1 race car.',
     highlights: [
-      'Specialized in charcoal, graphite realism, acrylic, and watercolor media.',
-      'Over 5+ years of dedicated traditional sketchbooks and portfolio studies.',
-      'Forms the irreplaceable organic foundation behind all digital and apparel works.'
+      'Vibrant cyber-neon lighting reflections mapped accurately across the racing helmet visor.',
+      'High-dynamic range composite integrating the F1 race car in motion with victorious athlete portraits.',
+      'Textured halftone grit and Formula 1 typography layout.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'brigida-friends': {
+    number: '05',
+    title: 'BRIGIDA & FRIENDS: MEADOW ADVENTURE',
+    category: 'Digital Art / 3D Cartoon Composite',
+    client: 'Creative Character & Photo Artwork',
+    year: '2024 — 2026',
+    role: 'Digital Illustrator & 3D Compositor',
+    deliverables: 'Stylized Character Composite, Custom 3D Logo Typography, Whimsical Scene Art',
+    image: 'assets/images/digital_brigida_minions.jpg',
+    description:
+      'A vibrant, playful photo composite merging real-life selfie perspective photography with animated 3D Minions characters, floating butterflies, a peeled banana foreground, and custom yellow 3D title lettering nestled in an expansive blooming green meadow.',
+    highlights: [
+      'Perspective matching between real-world foreground selfie arm and 3D character scale.',
+      'Custom 3D extrusion and sunny lighting simulation on "BRIGIDA and Friends" logo.',
+      'Vivid color treatment bringing out lush meadow greens, sunny skies, and playful yellow accents.'
     ],
     liveDemoUrl: '#'
   }
