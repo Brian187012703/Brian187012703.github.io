@@ -434,7 +434,16 @@ function initProjectsAndModal() {
     if (liveBtn) {
       liveBtn.onclick = (e) => {
         e.preventDefault();
-        showToast(`Launching prototype preview for ${data.title}...`);
+        closeProjectModal();
+        const contactModal = document.getElementById('contact-modal');
+        if (contactModal) {
+          const msgInput = document.getElementById('contact-message');
+          if (msgInput) {
+            msgInput.value = `Hi Brian Joshua, I saw your artwork "${data.title}" and would like to commission a similar project...`;
+          }
+          contactModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
       };
     }
 
@@ -520,12 +529,80 @@ function initContactSystem() {
   }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      playSound('chime');
-      showToast('✦ Inquiry received! Brian Joshua will respond within 24 hours.');
-      contactForm.reset();
-      setTimeout(closeContactModal, 1200);
+
+      const submitBtn = document.getElementById('contact-submit-btn') || contactForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '<span>Submit Commission Request</span><span style="font-size: 1.1rem;">✦</span>';
+
+      // Set loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        submitBtn.style.cursor = 'wait';
+        submitBtn.innerHTML = `
+          <span class="btn-spinner"></span>
+          <span>Sending to Brian's Inbox...</span>
+        `;
+      }
+
+      // Collect form data
+      const formData = new FormData(contactForm);
+      const payload = {};
+      formData.forEach((value, key) => {
+        payload[key] = value;
+      });
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/Briantanael187@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && (result.success === 'true' || result.success === true)) {
+          playSound('chime');
+          showToast('✓ Project inquiry sent directly to Brian Joshua! Check your email for confirmation.');
+          contactForm.reset();
+          setTimeout(closeContactModal, 1800);
+        } else if (result.message && result.message.toLowerCase().includes('activation')) {
+          playSound('chime');
+          showToast('✦ Form initialized! Check Briantanael187@gmail.com to click "Activate Form" once.');
+          contactForm.reset();
+          setTimeout(closeContactModal, 2800);
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.warn('FormSubmit AJAX issue, falling back:', err);
+        // Fallback: If network issue, open mailto client pre-populated so message is never lost
+        playSound('click');
+        showToast('✦ Notice: Opening your default email app to send directly...');
+        const subject = encodeURIComponent(`Commission Inquiry: ${payload.artwork_service || 'New Project'} — ${payload.name || ''}`);
+        const body = encodeURIComponent(
+          `Hi Brian Joshua,\n\n` +
+          `I would like to commission an artwork / project.\n\n` +
+          `• Name: ${payload.name || ''}\n` +
+          `• Email: ${payload.email || ''}\n` +
+          `• Artwork Service: ${payload.artwork_service || ''}\n` +
+          `• Project Scope: ${payload.project_budget || ''}\n\n` +
+          `Creative Brief & Vision:\n${payload.message || ''}\n`
+        );
+        window.location.href = `mailto:Briantanael187@gmail.com?subject=${subject}&body=${body}`;
+        setTimeout(closeContactModal, 1500);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '';
+          submitBtn.style.cursor = '';
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+      }
     });
   }
 }

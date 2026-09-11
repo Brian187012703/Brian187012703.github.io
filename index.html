@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Stylesheet (Cache-Busted for instant updates) -->
-  <link rel="stylesheet" href="css/style.css?v=2.1" />
+  <link rel="stylesheet" href="css/style.css?v=2.2" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
 </head>
 <body>
@@ -434,42 +434,48 @@
       <div class="modal-header-tag">Commission / Collaboration</div>
       <h2 class="modal-title" id="contact-modal-title" style="font-size: 2.2rem;">START A PROJECT</h2>
 
-      <form id="quick-contact-form" class="contact-form">
+      <form id="quick-contact-form" class="contact-form" action="https://formsubmit.co/Briantanael187@gmail.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New Commission Inquiry — Brian Joshua Portfolio" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Brian Joshua Tanael! I have received your project inquiry and will review your creative brief shortly." />
+
         <div class="form-group">
           <label for="contact-name">Your Full Name</label>
-          <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe" required />
+          <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. John Doe" required />
         </div>
 
         <div class="form-group">
           <label for="contact-email">Email Address</label>
-          <input type="email" id="contact-email" class="form-control" placeholder="e.g. client@example.com" required />
+          <input type="email" id="contact-email" name="email" class="form-control" placeholder="e.g. client@example.com" required />
         </div>
 
         <div class="form-group">
           <label for="contact-service">Artwork & Project Type</label>
-          <select id="contact-service" class="form-control" style="cursor: pointer;">
-            <option value="social-media">Social Media Posts & Marketing Graphics</option>
-            <option value="apparel">Custom Apparel & Streetwear Merch Design</option>
-            <option value="digital-art">Digital Arts & Concept Illustration</option>
-            <option value="traditional-art">Traditional Drawing & Painting Commission</option>
+          <select id="contact-service" name="artwork_service" class="form-control" style="cursor: pointer;">
+            <option value="Social Media Posts & Marketing Graphics">Social Media Posts & Marketing Graphics</option>
+            <option value="Custom Apparel & Streetwear Merch Design">Custom Apparel & Streetwear Merch Design</option>
+            <option value="Digital Arts & Concept Illustration">Digital Arts & Concept Illustration</option>
+            <option value="Traditional Drawing & Painting Commission">Traditional Drawing & Painting Commission</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="contact-budget">Project Scope / Budget</label>
-          <select id="contact-budget" class="form-control" style="cursor: pointer;">
-            <option value="tier-1">Standard / Single Artwork</option>
-            <option value="tier-2">Brand Bundle / Apparel Collection</option>
-            <option value="tier-3">Full Campaign / Long-term Retainer</option>
+          <select id="contact-budget" name="project_budget" class="form-control" style="cursor: pointer;">
+            <option value="Standard / Single Artwork">Standard / Single Artwork</option>
+            <option value="Brand Bundle / Apparel Collection">Brand Bundle / Apparel Collection</option>
+            <option value="Full Campaign / Long-term Retainer">Full Campaign / Long-term Retainer</option>
           </select>
         </div>
 
         <div class="form-group">
           <label for="contact-message">Creative Brief & Vision</label>
-          <textarea id="contact-message" class="form-control" placeholder="Describe the style, elements, dimensions, and deadline..." required></textarea>
+          <textarea id="contact-message" name="message" class="form-control" placeholder="Describe the style, elements, dimensions, and deadline..." required></textarea>
         </div>
 
-        <button type="submit" class="btn-primary" style="margin-top: 10px; width: 100%; justify-content: center;">
+        <button type="submit" id="contact-submit-btn" class="btn-primary" style="margin-top: 10px; width: 100%; justify-content: center;">
           <span>Submit Commission Request</span>
           <span style="font-size: 1.1rem;">✦</span>
         </button>
@@ -481,6 +487,6 @@
   <div class="toast-container"></div>
 
   <!-- Main JavaScript File (Cache-Busted) -->
-  <script src="js/main.js?v=2.1"></script>
+  <script src="js/main.js?v=2.2"></script>
 </body>
 </html>
