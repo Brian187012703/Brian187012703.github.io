@@ -355,19 +355,21 @@ function initProjectsAndModal() {
   const filterTabs = document.querySelectorAll('.filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
 
-  // Toggle View All Projects
+  // Toggle View All Projects & Load More Button
   const toggleAllBtn = document.getElementById('toggle-all-projects');
   const viewAllText = document.getElementById('view-all-text');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreWrap = document.getElementById('load-more-wrap');
   let isAllExpanded = false;
+  let currentFilter = 'all';
 
-  if (toggleAllBtn) {
-    toggleAllBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      playSound('click');
-      isAllExpanded = !isAllExpanded;
-      const extraProjects = document.querySelectorAll('.extra-project');
+  function setExpandedState(expanded) {
+    isAllExpanded = expanded;
+    const extraProjects = document.querySelectorAll('.extra-project');
 
-      extraProjects.forEach((card) => {
+    extraProjects.forEach((card) => {
+      const cat = card.getAttribute('data-category');
+      if (currentFilter === 'all' || cat === currentFilter) {
         if (isAllExpanded) {
           card.style.display = 'flex';
           setTimeout(() => (card.style.opacity = '1'), 50);
@@ -375,11 +377,38 @@ function initProjectsAndModal() {
           card.style.opacity = '0';
           setTimeout(() => (card.style.display = 'none'), 200);
         }
-      });
-
-      if (viewAllText) {
-        viewAllText.textContent = isAllExpanded ? 'Show Top 3 Only' : 'View All Projects';
       }
+    });
+
+    if (viewAllText) {
+      viewAllText.textContent = isAllExpanded ? 'Show Top 3 Only' : 'View All Projects';
+    }
+
+    if (loadMoreBtn) {
+      const btnText = loadMoreBtn.querySelector('.btn-text');
+      if (isAllExpanded) {
+        loadMoreBtn.classList.add('expanded');
+        if (btnText) btnText.textContent = 'Show Top 3 Only';
+      } else {
+        loadMoreBtn.classList.remove('expanded');
+        if (btnText) btnText.textContent = `See More Works (${extraProjects.length})`;
+      }
+    }
+  }
+
+  if (toggleAllBtn) {
+    toggleAllBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      playSound('click');
+      setExpandedState(!isAllExpanded);
+    });
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      playSound('click');
+      setExpandedState(!isAllExpanded);
     });
   }
 
@@ -390,18 +419,23 @@ function initProjectsAndModal() {
       tab.classList.add('active');
 
       const filter = tab.getAttribute('data-filter');
+      currentFilter = filter;
+
       projectCards.forEach((card) => {
         const cat = card.getAttribute('data-category');
         const isExtra = card.classList.contains('extra-project');
 
         if (filter === 'all') {
+          if (loadMoreWrap) loadMoreWrap.style.display = 'flex';
           if (!isExtra || isAllExpanded) {
             card.style.display = 'flex';
             setTimeout(() => (card.style.opacity = '1'), 50);
           } else {
-            card.style.display = 'none';
+            card.style.opacity = '0';
+            setTimeout(() => (card.style.display = 'none'), 200);
           }
         } else if (cat === filter) {
+          if (loadMoreWrap) loadMoreWrap.style.display = 'none';
           card.style.display = 'flex';
           setTimeout(() => (card.style.opacity = '1'), 50);
         } else {

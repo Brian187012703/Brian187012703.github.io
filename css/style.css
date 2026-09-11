@@ -977,9 +977,59 @@ body {
   transition: all var(--transition-fast);
 }
 
-.project-card:hover .project-arrow {
+.project-card.extra-project {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform var(--transition-smooth), border-color var(--transition-fast), box-shadow var(--transition-smooth);
+}
+
+/* Load More / See More Button */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.btn-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-red);
+  color: var(--text-primary);
+  font-family: var(--font-tech);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-load-more:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #ffffff;
+  box-shadow: 0 0 25px var(--accent-neon-glow);
+  transform: translateY(-3px);
+}
+
+.btn-load-more .btn-icon {
   color: var(--accent-red);
-  transform: translateX(6px);
+  transition: transform 0.3s ease, color var(--transition-fast);
+}
+
+.btn-load-more:hover .btn-icon {
+  color: #ffffff;
+}
+
+.btn-load-more.expanded .btn-icon {
+  transform: rotate(180deg);
 }
 
 /* ==========================================================================
