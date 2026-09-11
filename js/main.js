@@ -355,9 +355,7 @@ function initProjectsAndModal() {
   const filterTabs = document.querySelectorAll('.filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
 
-  // Load More & View All Toggle Controls
-  const toggleAllBtn = document.getElementById('toggle-all-projects');
-  const viewAllText = document.getElementById('view-all-text');
+  // Load More Button
   const loadMoreBtn = document.getElementById('load-more-btn');
   const loadMoreWrap = document.getElementById('load-more-wrap');
 
@@ -395,11 +393,6 @@ function initProjectsAndModal() {
     // 3. Show or hide Load More button based on whether there are > 3 projects in this category
     if (hasMore) {
       if (loadMoreWrap) loadMoreWrap.style.display = 'flex';
-      if (toggleAllBtn) toggleAllBtn.style.display = 'inline-flex';
-
-      if (viewAllText) {
-        viewAllText.textContent = isAllExpanded ? 'Show Top 3 Only' : `View All (${totalMatching})`;
-      }
 
       if (loadMoreBtn) {
         const btnText = loadMoreBtn.querySelector('.btn-text');
@@ -412,9 +405,8 @@ function initProjectsAndModal() {
         }
       }
     } else {
-      // 3 or fewer projects: hide the "See More" button and header toggle link
+      // 3 or fewer projects: hide the "See More" button
       if (loadMoreWrap) loadMoreWrap.style.display = 'none';
-      if (toggleAllBtn) toggleAllBtn.style.display = 'none';
     }
   }
 
@@ -425,13 +417,6 @@ function initProjectsAndModal() {
     playSound('click');
     isAllExpanded = !isAllExpanded;
     renderProjects();
-  }
-
-  if (toggleAllBtn) {
-    toggleAllBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      toggleExpand();
-    });
   }
 
   if (loadMoreBtn) {

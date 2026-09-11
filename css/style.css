@@ -715,6 +715,7 @@ body {
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
+  margin-left: auto;
 }
 
 .filter-tab {
@@ -744,33 +745,6 @@ body {
   color: #ffffff;
   border-color: var(--accent-red);
   box-shadow: 0 0 14px var(--accent-subtle-glow);
-}
-
-.view-all-link {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-family: var(--font-tech);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.02);
-  transition: all var(--transition-fast);
-  white-space: nowrap;
-}
-
-.view-all-link:hover {
-  color: #ffffff;
-  border-color: var(--accent-red);
-  background: rgba(255, 30, 45, 0.12);
-  box-shadow: 0 0 12px var(--accent-subtle-glow);
-  transform: translateX(3px);
 }
 
 /* Projects Flex Container */
@@ -1988,12 +1962,6 @@ textarea.form-control {
     flex-shrink: 0;
     padding: 8px 15px;
     font-size: 0.72rem;
-  }
-
-  .view-all-link {
-    align-self: flex-start;
-    font-size: 0.74rem;
-    padding: 7px 15px;
   }
 
   .three-column-grid {
