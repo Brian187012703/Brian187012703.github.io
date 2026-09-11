@@ -437,6 +437,60 @@ const projectData = {
       'Symbolic narrative exploring introspection, vulnerability, and modern stoicism.'
     ],
     liveDemoUrl: '#'
+  },
+  'apparel-wasoy-mayon': {
+    number: '11',
+    title: 'WASOY: MAYON PEACE TEE',
+    category: 'Custom Apparel / Streetwear Graphic Tee',
+    client: 'Wasoy Concept Apparel 2025',
+    year: '2024 — 2026',
+    role: 'Apparel Graphic Designer & Typographer',
+    deliverables: 'Vector Print Separations, Direct-to-Film (DTF) Layout, Streetwear Lookbook Mockup',
+    image: 'assets/images/apparel_wasoy_mayon.jpg',
+    description:
+      'Clean, minimalist oversized streetwear tee concept featuring a picturesque brush-stroke vignette of Mount Mayon. Paired with bold serif branding and poignant typography: "Even the fire of Mayon can\'t silence a child\'s cry for peace."',
+    highlights: [
+      'Custom brush-edge watercolor vignette framing Mount Mayon and surrounding landscape.',
+      'Balanced editorial typography hierarchy suited for oversized boxy tee silhouettes.',
+      'Color-calibrated for direct-to-garment (DTG) and high-density screen print execution.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'apparel-zerotwo-jersey': {
+    number: '12',
+    title: 'ZERO TWO #02 SUBLIMATION JERSEY',
+    category: 'Custom Apparel / Sublimation Basketball Jersey',
+    client: 'Imprenta Quality Works',
+    year: '2024 — 2026',
+    role: 'Sportswear & Sublimation Designer',
+    deliverables: 'Full Sublimation Print Pattern, Vector Grading, Manga Collage Texture',
+    image: 'assets/images/apparel_zerotwo_jersey.jpg',
+    description:
+      'High-octane full-sublimation basketball jersey design inspired by Zero Two (Darling in the Franxx). Features a deep red monochromatic anime manga background collage, dynamic rib-cage cyber side trims, and high-visibility athletic squad numbering.',
+    highlights: [
+      'Seamless all-over print (AOP) full sublimation vector layout with collar and armhole trim matching.',
+      'Subtle red-and-black anime screentone composite integrated into the athletic mesh fabric.',
+      'Production-ready vector separations built to industry sportswear manufacturing standards.'
+    ],
+    liveDemoUrl: '#'
+  },
+  'apparel-wasoy-sunflower': {
+    number: '13',
+    title: 'WASOY: ART SPEAKS OUT YOUNG TEE',
+    category: 'Custom Apparel / Typography Streetwear Tee',
+    client: 'Wasoy Concept Apparel 2025',
+    year: '2024 — 2026',
+    role: 'Streetwear Graphic Artist',
+    deliverables: 'Custom Vector Typography, Angel Motif, High-Contrast Screen Print Master',
+    image: 'assets/images/apparel_wasoy_sunflower.jpg',
+    description:
+      'A striking pitch-black streetwear oversized t-shirt design highlighting custom ornamental calligraphy and an intricate cherub angel emblem: "WHERE ART SPEAKS Out Young". Presented in a warm golden sunflower horizon campaign mockup.',
+    highlights: [
+      'Custom hybridized typography blending gothic all-caps letterforms with sweeping cursive script.',
+      'Intricate stippled cherub/angel line-art emblem vector designed for sharp screen printing.',
+      'Optimized for heavy cotton oversized streetwear fit with high-contrast plastisol ink printing.'
+    ],
+    liveDemoUrl: '#'
   }
 };
 
