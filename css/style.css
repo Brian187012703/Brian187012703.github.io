@@ -1323,6 +1323,7 @@ body {
   transition: all var(--transition-fast);
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 
 .contact-method-card:hover {

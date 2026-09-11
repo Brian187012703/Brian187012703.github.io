@@ -481,8 +481,8 @@ function initProjectsAndModal() {
    6. CONTACT SYSTEM & CLIPBOARD
    ========================================================================== */
 function initContactSystem() {
-  // Copy to clipboard cards
-  const copyCards = document.querySelectorAll('.contact-method-card');
+  // Copy to clipboard cards (for elements with data-copy)
+  const copyCards = document.querySelectorAll('.contact-method-card[data-copy]');
   copyCards.forEach((card) => {
     card.addEventListener('click', (e) => {
       const copyVal = card.getAttribute('data-copy');
