@@ -339,8 +339,8 @@ body {
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding: 20px 0 50px;
-  min-height: 920px;
+  padding: 30px 0 40px;
+  min-height: auto;
   display: flex;
   align-items: center;
   overflow: visible;
@@ -373,9 +373,9 @@ body {
   z-index: 3;
   width: 100%;
   display: grid;
-  grid-template-columns: 0.9fr 1.75fr 0.75fr;
+  grid-template-columns: 1.05fr 1.45fr 0.9fr;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 /* Hero Left Column */
@@ -534,18 +534,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 700px;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .portrait-wrapper {
   position: relative;
   width: 100%;
-  max-width: 780px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   perspective: 1000px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Cutout Container - Clean, Borderless, Organic */
@@ -555,7 +559,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -566,30 +570,30 @@ body {
 
 @keyframes portraitFloat {
   0% { transform: translateY(0px); }
-  100% { transform: translateY(-10px); }
+  100% { transform: translateY(-8px); }
 }
 
-/* Portrait Image - Sharp, Extra Big, Clean & Natural */
+/* Portrait Image - Sharp, Grand, Clean & Natural */
 .portrait-img {
   width: 100%;
-  max-width: 760px;
+  max-width: 580px;
   height: auto;
   display: block;
   object-fit: contain;
-  filter: contrast(1.05) brightness(1.02) drop-shadow(0 25px 45px rgba(0, 0, 0, 0.95));
-  -webkit-mask-image: linear-gradient(to bottom, #000 90%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, #000 90%, rgba(0, 0, 0, 0) 100%);
+  filter: contrast(1.05) brightness(1.02) drop-shadow(0 20px 35px rgba(0, 0, 0, 0.92));
+  -webkit-mask-image: linear-gradient(to bottom, #000 92%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, #000 92%, rgba(0, 0, 0, 0) 100%);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
   user-select: none;
   pointer-events: auto;
 }
 
 .portrait-wrapper:hover .portrait-container {
-  transform: translateY(-10px) scale(1.02);
+  transform: translateY(-8px) scale(1.02);
 }
 
 .portrait-wrapper:hover .portrait-img {
-  filter: contrast(1.08) brightness(1.04) drop-shadow(0 30px 55px rgba(0, 0, 0, 0.98));
+  filter: contrast(1.08) brightness(1.04) drop-shadow(0 26px 45px rgba(0, 0, 0, 0.96));
 }
 
 /* Hero Right Column: Sparkle Quote & Metric Stats */
@@ -666,11 +670,12 @@ body {
 }
 
 /* ==========================================================================
-   SELECTED PROJECTS SECTION
+   /* ==========================================================================
+   SELECTED PROJECTS SECTION & RESPONSIVE CONTROLS
    ========================================================================== */
 .projects-section {
   position: relative;
-  padding: 80px 0 70px;
+  padding: 60px 0 80px;
   border-top: 1px solid var(--border-light);
 }
 
@@ -679,8 +684,8 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 16px;
+  margin-bottom: 30px;
 }
 
 .section-title-wrap {
@@ -691,7 +696,7 @@ body {
 
 .section-title {
   font-family: var(--font-tech);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -700,7 +705,7 @@ body {
 
 .section-title-line {
   height: 2px;
-  width: 40px;
+  width: 36px;
   background: var(--accent-red);
   box-shadow: 0 0 10px var(--accent-red);
 }
@@ -708,27 +713,30 @@ body {
 .project-filter-tabs {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .filter-tab {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
   font-family: var(--font-tech);
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: var(--radius-full);
   cursor: pointer;
+  white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
 .filter-tab:hover {
   color: var(--text-primary);
   border-color: var(--border-medium);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .filter-tab.active {
@@ -739,21 +747,30 @@ body {
 }
 
 .view-all-link {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-tech);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.02);
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .view-all-link:hover {
-  color: var(--accent-red);
-  transform: translateX(4px);
+  color: #ffffff;
+  border-color: var(--accent-red);
+  background: rgba(255, 30, 45, 0.12);
+  box-shadow: 0 0 12px var(--accent-subtle-glow);
+  transform: translateX(3px);
 }
 
 /* Projects Grid */
@@ -1682,20 +1699,20 @@ textarea.form-control {
 /* Laptop & Desktop (1025px — 1280px) */
 @media (max-width: 1280px) {
   .hero-grid {
-    grid-template-columns: 0.95fr 1.6fr 0.8fr;
-    gap: 14px;
+    grid-template-columns: 1fr 1.4fr 0.9fr;
+    gap: 16px;
   }
 
   .portrait-wrapper {
-    max-width: 660px;
+    max-width: 520px;
   }
 
   .portrait-img {
-    max-width: 640px;
+    max-width: 500px;
   }
 
   .hero-center {
-    min-height: 600px;
+    min-height: auto;
   }
 }
 
@@ -1703,12 +1720,12 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .hero-section {
     min-height: auto;
-    padding: 30px 0 50px;
+    padding: 24px 0 40px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
+    gap: 24px;
   }
 
   .hero-left {
@@ -1719,14 +1736,15 @@ textarea.form-control {
   .hero-center {
     order: 2;
     min-height: auto;
+    margin: 0;
   }
 
   .portrait-wrapper {
-    max-width: 440px;
+    max-width: 400px;
   }
 
   .portrait-img {
-    max-width: 420px;
+    max-width: 380px;
   }
 
   .hero-right {
@@ -1776,7 +1794,7 @@ textarea.form-control {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 0;
+    padding: 16px 0;
     gap: 12px;
   }
   
@@ -1792,12 +1810,12 @@ textarea.form-control {
 
   .hero-section {
     min-height: auto;
-    padding: 24px 0 40px;
+    padding: 20px 0 36px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .hero-left {
@@ -1818,18 +1836,18 @@ textarea.form-control {
   .hero-center {
     order: 2;
     min-height: auto;
-    margin: 10px 0 16px;
+    margin: 8px 0 16px;
     display: flex;
     justify-content: center;
   }
 
   .portrait-wrapper {
-    max-width: 360px;
+    max-width: 340px;
     width: 100%;
   }
 
   .portrait-img {
-    max-width: 340px;
+    max-width: 320px;
   }
 
   .hero-right {
@@ -1863,6 +1881,41 @@ textarea.form-control {
 
   .stat-number {
     font-size: clamp(2.4rem, 6vw, 3.2rem);
+  }
+
+  /* Responsive Selected Works Controls */
+  .section-header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  .project-filter-tabs {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 2px 0 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .project-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+    padding: 8px 15px;
+    font-size: 0.72rem;
+  }
+
+  .view-all-link {
+    align-self: flex-start;
+    font-size: 0.74rem;
+    padding: 7px 15px;
   }
 
   .three-column-grid {
